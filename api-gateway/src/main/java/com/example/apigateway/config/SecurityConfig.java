@@ -32,7 +32,7 @@ public class SecurityConfig {
          http
                 .csrf(csrf -> csrf.disable())
                 .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/user/register", "/auth/login").permitAll()
+                        .pathMatchers("/user/register", "/auth/login","log/getLog").permitAll()
                         .pathMatchers("/user/corporate").hasRole("PERSONAL")
                         .anyExchange().authenticated())
 
